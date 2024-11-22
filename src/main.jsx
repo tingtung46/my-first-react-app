@@ -3,9 +3,10 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import Person from "./Person.jsx";
 import "./index.css";
+import Clock from "./Clock.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Person />
+    <Clock />
   </StrictMode>
 );
