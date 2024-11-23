@@ -1,32 +1,21 @@
-function Button({
-  text = "Click Me!",
-  color = "blue",
-  fontSize = 12,
-  handleClick,
-}) {
-  const buttonStyle = {
-    color: color,
-    fontSize: fontSize + "px",
+import { useState } from "react";
+
+const App = () => {
+  const [heading, setHeading] = useState("Magnificent Monkeys");
+
+  const clickHandler = () => {
+    setHeading("Radical Rhinos");
   };
 
   return (
-    <button
-      onClick={() => handleClick("https://www.theodinproject.com")}
-      style={buttonStyle}
-    >
-      {text}
-    </button>
-  );
-}
+    <>
+      <button type="button" onClick={clickHandler}>
+        Click Me
+      </button>
 
-export default function App() {
-  const handleButtonClick = (url) => {
-    window.location.href = url;
-  };
-
-  return (
-    <div>
-      <Button handleClick={handleButtonClick} />
-    </div>
+      <h1>{heading}</h1>
+    </>
   );
-}
+};
+
+export default App;
