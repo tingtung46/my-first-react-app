@@ -1,12 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
-import Person from "./Person.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import routes from "./routes";
 import "./index.css";
-import Clock from "./Clock.jsx";
+
+const router = createBrowserRouter(routes);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Clock />
+    <RouterProvider router={router} />
   </StrictMode>
 );
